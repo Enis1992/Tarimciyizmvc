@@ -1,0 +1,59 @@
+﻿@model tarimciyiz.Models.Kargo
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/paylasim/_layoutAdmin.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Kargo</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.kargoAdi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.kargoAdi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.kargoAdresi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.kargoAdresi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.kargoTelefon)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.kargoTelefon)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.kargoWeb)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.kargoWeb)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.kargoEmail)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.kargoEmail)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.kargoID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,34 @@
+﻿@model IEnumerable<tarimciyiz.Models.Marka>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/paylasim/_layoutAdmin.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.markaAdi)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.markaAdi)
+        </td>
+        <td>
+            @Html.ActionLink("Düzenle", "Edit", new { id=item.markaID }) |
+            @Html.ActionLink("Ayrıntı", "Details", new { id=item.markaID }) |
+            @Html.ActionLink("Sil", "Delete", new { id=item.markaID })
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,12 @@
+﻿@model IEnumerable<tarimciyiz.Models.Kategori>
+
+
+<li class="menu-item-has-children">
+    <a href="#">Kategoriler</a>
+    <ul>
+        @foreach (var item in Model)
+        {
+        <li><a href="/Home/Urunler/@item.kategoriID">@item.kategoriAdi</a></li>
+        }
+    </ul>
+</li>

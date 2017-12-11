@@ -1,0 +1,58 @@
+﻿@model IEnumerable<tarimciyiz.Models.Kargo>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/paylasim/_layoutAdmin.cshtml";
+}
+
+<h2>Kargo İşlemleri</h2>
+
+<p>
+    @Html.ActionLink("Ekle", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.kargoAdi)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.kargoAdresi)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.kargoTelefon)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.kargoWeb)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.kargoEmail)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.kargoAdi)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.kargoAdresi)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.kargoTelefon)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.kargoWeb)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.kargoEmail)
+        </td>
+        <td>
+            @Html.ActionLink("Düzenle", "Edit", new { id=item.kargoID }) |
+            @Html.ActionLink("Ayrıntı", "Details", new { id=item.kargoID }) |
+            @Html.ActionLink("Sil", "Delete", new { id=item.kargoID })
+        </td>
+    </tr>
+}
+
+</table>

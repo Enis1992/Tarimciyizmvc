@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link href="~/Content/bootstrap-theme.min.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery-1.9.1.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+
+</head>
+<body>
+    <div class="container">
+        <br />
+        <br />
+       
+        <div class="btn-group" role="group" aria-label="...">
+            <a href="/Kategori/Index" class="btn btn-group-vertical">Kategori İşlemleri</a>
+            <a href="/Marka/Index" class="btn btn-group-vertical">Marka İşlemleri</a>
+            <a href="/Kargo/Index" class="btn btn-group-vertical">Kargo Firma İşlemleri</a>
+            <a href="/Urun/Index" class="btn btn-group-vertical">Ürün İşlemleri</a>
+            <a href="/Uye/Index" class="btn btn-group-vertical">Uye İşlemleri</a>
+            <a href="/Siparis/Index" class="btn btn-group-vertical">Siparis İşlemleri</a>
+            <a href="/Uye/Giris" class="btn btn-group-vertical">Uye Girişi</a>
+            <a href="/Uye/Cikis" class="btn btn-group-vertical">Çıkış</a>
+</div>
+        
+        <hr />
+        <br />
+        <div>
+            @RenderBody()
+        </div>
+
+
+    </div>
+
+   
+</body>
+</html>

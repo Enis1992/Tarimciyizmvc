@@ -1,0 +1,22 @@
+﻿@model tarimciyiz.Models.Urun
+@{
+    ViewBag.Title = "ResimEkle";
+    Layout = "~/Views/paylasim/_layoutAdmin.cshtml";
+}
+
+<h2>Resim Eklenen Ürün:@Model.urunAdi</h2>
+<br/>
+@using(Html.BeginForm("ResimEkle","Urun",FormMethod.Post,new { enctype = "multipart/form-data" }))
+{
+    <input type="hidden" name="urunid" value="@Model.urunID" />
+    <input type="file" name="Dosyalar" multiple />
+    <input type="submit" value="Yükle" />
+
+
+
+}
+
+@if (ViewBag.Mesaj != null)
+{
+    <p style="color:red">@ViewBag.Mesaj</p>
+}

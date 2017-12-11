@@ -1,0 +1,27 @@
+﻿@model tarimciyiz.Models.Marka
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/paylasim/_layoutAdmin.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Marka</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.markaAdi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.markaAdi)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.markaID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

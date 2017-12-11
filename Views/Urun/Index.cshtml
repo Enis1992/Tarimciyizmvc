@@ -1,0 +1,61 @@
+﻿@model IEnumerable<tarimciyiz.Models.Urun>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/paylasim/_layoutAdmin.cshtml";
+}
+
+<h2>Ürün Listesi</h2>
+
+<p>
+    @Html.ActionLink("Yeni Ürün Ekle", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Kategori.kategoriAdi)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Marka.markaAdi)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.urunAdi)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.urunAciklama)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.urunFiyat)
+        </th>
+        <th>
+            İşlemler
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Kategori.kategoriAdi)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Marka.markaAdi)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.urunAdi)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.urunAciklama)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.urunFiyat)
+        </td>
+        <td>
+            @Html.ActionLink("Resim Ekle", "ResimEkle", new { id = item.urunID }) |
+            @Html.ActionLink("Düzenle", "Edit", new { id=item.urunID }) |
+            @Html.ActionLink("Ayrıntı", "Details", new { id=item.urunID }) |
+            @Html.ActionLink("Sil", "Delete", new { id=item.urunID })
+        </td>
+    </tr>
+}
+
+</table>

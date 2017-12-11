@@ -1,0 +1,35 @@
+﻿@model IEnumerable<tarimciyiz.Models.Urun>
+
+@{
+    ViewBag.Title = "Urunler";
+    Layout = "~/Views/paylasim/_LayoutUser.cshtml";
+}
+
+<div class="col-md-9">
+    <div class="row">
+        @foreach ( tarimciyiz.Models.Urun item in Model)
+        {
+            <div class="col-md-4 col-xs-6">
+                <div class="product">
+                    <div class="product-cover">
+                        <div class="product-cover-hover"><span><a href="/Home/Urunler/@item.urunID">İncele</a></span></div>
+                        <img src="/Resimler/@item.Resim.FirstOrDefault(x=>x.urunID==item.urunID).resimAdi" alt="@item.urunAdi" />
+                    </div>
+                    <div class="product-details">
+                        <h1><a href="/Home/UrunDetayı/@item.urunID">@item.urunAdi</a></h1>
+                        <p>@item.urunAciklama</p>
+                        <div class="product-price">
+                            <i class="icon-257" title="Sepete Ekle"></i>
+                            @item.urunFiyat
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+
+    </div>
+
+
+</div>
+
+
